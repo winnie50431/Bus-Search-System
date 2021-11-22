@@ -1,0 +1,2 @@
+(this["webpackJsonpbus-search-system"]=this["webpackJsonpbus-search-system"]||[]).push([[0],{9:function(e,s,t){"use strict";t.r(s);var c=t(1),r=t.n(c),n=t(3),a=t.n(n),i=t(0);var o=function(){return Object(i.jsx)("div",{className:"App",children:Object(i.jsx)("h1",{children:"Hello, world."})})};a.a.render(Object(i.jsx)(r.a.StrictMode,{children:Object(i.jsx)(o,{})}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.d8a1b639.chunk.js.map
