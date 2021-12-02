@@ -13,11 +13,6 @@ const MapContainer = ({ coordinates }) => {
     width: "100%",
   };
 
-  const defaultCenter = {
-    lat: 25.103392,
-    lng: 121.520988,
-  };
-
   const stops = [
     {
       StopUID: "TPE13521",
@@ -112,8 +107,7 @@ const MapContainer = ({ coordinates }) => {
     <LoadScript
     //    googleMapsApiKey='YOUR_API_KEY_HERE'
     >
-      <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
-        {/* <Marker position={coordinates} /> */}
+      <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={}>
         {stops.length > 0
           ? stops.map((stop) => (
               <Marker
@@ -127,15 +121,6 @@ const MapContainer = ({ coordinates }) => {
               />
             ))
           : null}
-        {/* {selected && (
-          <InfoWindow
-            position={selected.position}
-            clickable={true}
-            onCloseClick={() => setSelected(null)}
-          >
-            <p>名字</p>
-          </InfoWindow>
-        )} */}
       </GoogleMap>
     </LoadScript>
   );

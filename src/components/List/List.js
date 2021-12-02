@@ -4,7 +4,9 @@ import { formatTime } from "../../api/helper";
 
 const List = ({ routeName }) => {
   const [timeData, setTimeData] = useState(null);
+  const [direction, setDirection] = useState(0);
 
+  // 1. get data
   useEffect(() => {
     if (routeName) {
       BusService.getEstimateTime(routeName)
@@ -15,10 +17,16 @@ const List = ({ routeName }) => {
     }
   }, [routeName]);
 
+  // 2. set direciton
+  const directionString = { 0: "去程", 1: "返程", 2: "迴圈", 255: "未知" };
+  if (direction) {
+    const status = direction;
+    console.log(directionString);
+  }
+
   return (
     <div>
       <h1>{routeName}</h1>
-
       <table>
         <thead>
           <tr>
@@ -30,8 +38,7 @@ const List = ({ routeName }) => {
           {timeData &&
             timeData.map((stop) => (
               <tr>
-                {/* <td>{stop.EstimateTime}</td> */}
-                <td>{global.helper.formatTime(stop.EstimateTime)}</td>
+                <td>{formatTime(stop.EstimateTime)}</td>
                 <td>{stop.StopName.Zh_tw}</td>
               </tr>
             ))}

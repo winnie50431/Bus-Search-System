@@ -101,7 +101,8 @@ const Menu = ({
           {stations.map((station) => {
             return (
               <option value={station.StationID} key={station.StationID}>
-                {station.StationName.Zh_tw}
+                {station.StationName.Zh_tw} 
+                {station.StationAddress}
               </option>
             );
           })}

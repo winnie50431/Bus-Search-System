@@ -14,22 +14,18 @@ const Homepage = () => {
   return (
     <div>
       <CssBaseline />
+      <Menu
+        coordinates={coordinates}
+        stations={stations}
+        setCoordinates={setCoordinates}
+        setStations={setStations}
+        setRouteName={setRouteName}
+      />
       <Grid container spacing={3} style={{ width: "100%" }}>
-        <Grid item xs={12}>
-          {/* <Navbar setCoordinates={setCoordinates} /> */}
-          <Menu
-            coordinates={coordinates}
-            stations={stations}
-            setCoordinates={setCoordinates}
-            setStations={setStations}
-            setRouteName={setRouteName}
-          />
-        </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={8}>
           <Map coordinates={coordinates} routeName={routeName} />
-          {/* <GoogleMap coordinates={coordinates} /> */}
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={4}>
           <List routeName={routeName} />
         </Grid>
       </Grid>
